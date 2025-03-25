@@ -1,11 +1,84 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import SocialPills from "../components/icons/SocialPills.astro"
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import ExperienceIcon from "../components/icons/ExperienceIcon.astro";
+import Codeicon from "../components/icons/Codeicon.astro";
+import Projects from "../components/Projects.astro";
+import TitleSection from "../components/TitleSection.astro";
+import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="blog-portafolio">
+	<main class="px-4">
+		<SectionContainer class = "py-30 pb-24">
+			<img
+				class="rounded-full w-60 h-60 object-cover justify-center mx-auto mb-4"
+				src="src/images/me.jpeg"
+				alt="profile picture"
+			/>
+			<h1
+				class="text-white text-center text-xl md:text-4xl lg:text-5xl font-bold gap-x-4 pb-6"
+			>
+				Hey, Soy Angel <span class="text-red-500 text px-0">Rojano</span> <br />
+				<a
+					href="https://www.linkedin.com/in/angel-vadir-rojano-islas-09144a272"
+					target="_blank"
+					rel="noopener"><Badge class="text-lg lg:text-4xl">Disponible para trabajar</Badge></a>
+				
+			</h1>
+			<h2 class="lg:text-2xl text-center opacity-80 max-w-[700px] text-wrap" >
+				Licenciado en Ciencias de la Computación con experiencia en el Desarrollo Full-Stack Web🌐.
+			</h2>
+			<ul>
+				<nav class="flex gap-4 mt-8 flex-wrap"> 
+					<SocialPills href="https://www.linkedin.com/in/angel-vadir-rojano-islas-09144a272">
+						<LinkedInIcon class=" size-4 md:size-6" />
+						LinkedIn
+					</SocialPills>
+					<SocialPills href="https://github.com/SourlZz">
+						<GithubIcon class=" size-4 md:size-6" />
+						GitHub
+					</SocialPills>
+					<SocialPills href="mailto:angelvadirrojanoislas@gmail.com">
+						<MailIcon class=" size-4 md:size-6" />
+						angelvadirrojanoislas@gmail.com
+					</SocialPills>
+									
+				</nav>
+			</ul>
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-2xl font-semibold mb-10  flex gap-x-2 items-center">
+				<ExperienceIcon class = "size-8"  />
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<h2 class="text-2xl font-semibold mb-10  flex gap-x-2 items-center">
+				<Codeicon class = "size-8"  />
+				Proyectos
+			</h2>
+			<Projects/>
+		</SectionContainer>
+		<SectionContainer id="sobre-mi">
+			<TitleSection>
+			  <ProfileCheck class="size-8" />
+			  Sobre mí
+			</TitleSection>
+			<AboutMe />
+		  </SectionContainer>
+	  
+	</main>
 </Layout>

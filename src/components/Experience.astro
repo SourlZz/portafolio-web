@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = 
+     [
+        {
+            title: 'Full Stack Developer',
+            company: 'Club Alpha Foundation',
+            date: 'Currently',
+            description: 'Me desempeño como desarrollador full stack de paginas web y aplicaciones moviles. Utilizando tecnologias como Angular, ionic, Springboot Framework, PsotgresSQL, entre otras.'
+        },
+        {
+            title: 'Prestador de Servicio Social en TI',
+            company: 'Colegio de Ingenieros Civiles del Estado Puebla A.C.',
+            date: '2024 - 2025',
+            description: 'Desempeñe mis actividades en el Area de TI gestionando la página de la institución con WordPress, también manejo de diferentes softwares de la empresa y soporte técnico.'
+        },
+    ]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">                  
+    {EXPERIENCE.map((exp) => (
+        <li class="mb-10 ms-6">            
+            <ExperienceItem {...exp} /> 
+        </li>
+    ))}
+</ol>
+
